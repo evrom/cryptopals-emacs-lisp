@@ -1,0 +1,10 @@
+* Cryptopals solutions in Emacs lisp (elisp)
+
+This repository is a WIP for the [[https://cryptopals.com/][Cryptopals]] challenges.
+
+Note: I only intend to do set 1 in Emacs lisp, and I may pick another language for the later challenges
+
+** Motivation
+
+No one has done the cryptopals challenges in Emacs lisp. There are cryptopals solutions (at leat for set 1) available in almost every language
+
