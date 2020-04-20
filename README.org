@@ -8,3 +8,10 @@ Note: I only intend to do set 1 in Emacs lisp, and I may pick another language f
 
 No one has done the cryptopals challenges in Emacs lisp. There are cryptopals solutions (at leat for set 1) available in almost every language
 
+** How to run
+
+Run the ERT tests on the cryptopals solutions with the command
+
+#+BEGIN_SRC sh
+emacs -batch -l ert -l test-set-1.el -f ert-run-tests-batch-and-exit
+#+END_SRC
