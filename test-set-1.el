@@ -11,3 +11,13 @@
               )
              "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
              )))
+
+(ert-deftest challenge-2 ()
+  (should
+   (string=
+    (fixed-xor
+     "1c0111001f010100061a024b53535009181c"
+     "686974207468652062756c6c277320657965"
+     )
+    "746865206b696420646f6e277420706c6179"
+    )))
