@@ -21,3 +21,25 @@
      )
     "746865206b696420646f6e277420706c6179"
     )))
+
+;; Challenge 3 helper functions
+(ert-deftest xor-hex-with-char ()
+  (should (equal (xor-hex-with-char "03" 65) "B"))
+  (should (equal (xor-hex-with-char "03" ?A) "B"))
+  )
+(ert-deftest is-english-letter ()
+  (should (= (is-english-letter ?A) 1))
+  (should (= (is-english-letter ?1) 0))
+  )
+(ert-deftest message-rank ()
+  (should (= (message-rank "Hi") 2))
+  (should (= (message-rank "!@") 0))
+  )
+
+(ert-deftest challenge-3 ()
+  (should
+    (member "Cooking MC's like a pound of bacon"
+     (message-strings
+      "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"))
+    )
+)
