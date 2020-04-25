@@ -1,4 +1,5 @@
-(require 'cl-lib)
+
+
 (defun xor-hex-with-char (hex-string char)
   (let
       (
@@ -42,16 +43,28 @@
 
 
 (defun message-strings (hex-string)
-  "Returns vector of strings with decoded messages brute forced with an ascii char"
+  "Returns Association list of strings with decoded messages brute forced with an ascii char"
   (let
       (
        (result '())
        )
     (dotimes (i 256)
-      (push (xor-hex-with-char hex-string i) result)
-      )
+      (push (list (xor-hex-with-char hex-string i) i) result))
     result
-    (cl-sort result '> :key 'message-rank)
     )
   )
+
+(defun ranked-message-strings (message-string-list)
+  "Sort list of messages strings by rank"
+  (sort message-string-list
+        (lambda
+         (a b)
+         (<
+          (message-rank (car a))
+          (message-rank (car b))
+         )
+         )
+        )
+  )
+(print (ranked-message-strings (message-strings "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")))
 
