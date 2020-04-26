@@ -49,7 +49,7 @@
        (result '())
        )
     (dotimes (i 256)
-      (push (list (xor-hex-with-char hex-string i) i) result))
+      (push (list (xor-hex-with-char hex-string i) i hex-string) result))
     result
     )
   )
@@ -66,5 +66,3 @@
          )
         )
   )
-(print (ranked-message-strings (message-strings "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")))
-
