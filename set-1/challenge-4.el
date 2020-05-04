@@ -1,10 +1,6 @@
 (load-file "./set-1/challenge-3.el")
+(load-file "./set-1/helpers.el")
 
-(defun read-lines (filePath)
-  "Return a list of lines of a file at filePath."
-  (with-temp-buffer
-    (insert-file-contents filePath)
-    (split-string (buffer-string) "\n" t)))
 
 
 (defun message-strings-from-lines (lines)

@@ -1,3 +1,5 @@
+(load-file "./set-1/helpers.el")
+
 (defun int-to-bin-str (i)
   "convert an integer into it's binary representation in string format"
   (let ((result ""))
@@ -46,3 +48,4 @@
     result
     )
   )
+
