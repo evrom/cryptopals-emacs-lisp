@@ -49,3 +49,14 @@
     )
   )
 
+(defun hamming-distance-by-key-length (input key-length) 
+  (let*
+      (
+       (segment-1 (substring input 0 key-length))
+       (segment-2 (substring input key-length (* 2 key-length)))
+       ) 
+    (hamming-distance segment-1 segment-2)
+    )
+  )
+
+

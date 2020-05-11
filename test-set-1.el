@@ -60,3 +60,7 @@ I go crazy when I hear a cymbal"
 (ert-deftest hamming-distance ()
   (should (= (hamming-distance "this is a test" "wokka wokka!!!") 37))
   )
+
+(ert-deftest hamming-distance-by-key-length ()
+  (should (= (hamming-distance-by-key-length "this is a testwokka wokka!!!" 14) 37))
+  )
