@@ -69,3 +69,7 @@ I go crazy when I hear a cymbal"
   (print (guess-key-length (base64-decode-string "HUIfTQsPAh9PE048GmllH0kcDk4TAQsHThsBFkU2AB4BSWQgVB0dQzNTTmVS
 BgBHVBwNRU0HBAxTEjwMHghJGgkRTxRMIRpHKwAFHUdZEQQJAGQmB1MANxYG") 2 40))
   )
+
+(ert-deftest normalize-score ()
+  (should (= (cdr (normalize-score '(4 . 20))) 5))
+  )

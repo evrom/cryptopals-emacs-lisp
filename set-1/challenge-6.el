@@ -74,3 +74,22 @@
       )
   )
   )
+
+(defun normalize-score (item)
+  (let*
+      (
+       (key-length (car item))
+       (score (cdr item))
+       (normalized-score (/ (float score) key-length))
+       )
+    (cons key-length normalized-score)
+    )
+  )
+
+(defun normalize-key-guesses (input)
+  "Use guess-key-length output to return alist of normalized guess score"
+  (mapcar 'normalize-score input)
+  )
+
+(defun rank-normalized-key-guesses (input)
+  (sort input (lambda (item-1 item-2) (< (cdr item-1) (cdr item-2)))))
