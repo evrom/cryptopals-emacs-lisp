@@ -64,3 +64,8 @@ I go crazy when I hear a cymbal"
 (ert-deftest hamming-distance-by-key-length ()
   (should (= (hamming-distance-by-key-length "this is a testwokka wokka!!!" 14) 37))
   )
+
+(ert-deftest guess-key-length ()
+  (print (guess-key-length (base64-decode-string "HUIfTQsPAh9PE048GmllH0kcDk4TAQsHThsBFkU2AB4BSWQgVB0dQzNTTmVS
+BgBHVBwNRU0HBAxTEjwMHghJGgkRTxRMIRpHKwAFHUdZEQQJAGQmB1MANxYG") 2 40))
+  )

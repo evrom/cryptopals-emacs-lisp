@@ -59,4 +59,18 @@
     )
   )
 
-
+(defun guess-key-length (input min max)
+  "Guess key length by finding hamming distances between different sized segments of cipher text"
+  (let
+      (
+       (iterations (+ (- max min) 1))
+       (result '())
+       )
+    (dotimes (i iterations result)
+      (setq result
+            (cons
+             (cons (+ i min) (hamming-distance-by-key-length input (+ i min)))
+             result))
+      )
+  )
+  )
