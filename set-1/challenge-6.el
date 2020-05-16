@@ -93,3 +93,26 @@
 
 (defun rank-normalized-key-guesses (input)
   (sort input (lambda (item-1 item-2) (< (cdr item-1) (cdr item-2)))))
+
+(defun blocks-from-ciphertext (ciphertext block-size)
+  (let
+      (
+       (result (make-vector block-size '(1)))
+       )
+    (dotimes (i (length ciphertext) result)
+      (let*
+          (
+           (index (% i block-size))
+           (character (aref ciphertext i))
+           (block (aref result index))
+          ) 
+        (aset result index (append block (list character)))
+          )
+      )
+    )
+  )
+
+(defun read-and-decode-cyphertext (filePath)
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (base64-decode-string (buffer-string))))

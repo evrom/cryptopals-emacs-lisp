@@ -73,3 +73,12 @@ BgBHVBwNRU0HBAxTEjwMHghJGgkRTxRMIRpHKwAFHUdZEQQJAGQmB1MANxYG") 2 40))
 (ert-deftest normalize-score ()
   (should (= (cdr (normalize-score '(4 . 20))) 5))
   )
+
+(ert-deftest blocks-from-ciphertext ()
+  (should (equal
+           (blocks-from-ciphertext "aabaabaaaaaaaaaaaaa" 3)
+           [(1 97 97 97 97 97 97 97)
+            (1 97 97 97 97 97 97)
+            (1 98 98 97 97 97 97)]
+           ))
+  )
